@@ -53,6 +53,8 @@ def getSIFTfeatures(input_img):
 
 def main():
     f = open('new.csv', 'w')
+    imgArray = ','.join('Column' + str(x) for x in range(0,900))
+    f.write(imgArray + ', ClassLabel\n')
     for filename in glob.glob('data/*.jpg'):
         name = filename.split("_")
         label = getlabel(name[0])
