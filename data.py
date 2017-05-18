@@ -52,14 +52,14 @@ def getSIFTfeatures(input_img):
     return im_mat
 
 def main():
-    f = open('data.csv', 'w')
+    f = open('new.csv', 'w')
     for filename in glob.glob('data/*.jpg'):
         name = filename.split("_")
         label = getlabel(name[0])
         input_img = cv2.imread(filename,cv2.IMREAD_GRAYSCALE)
         data = cv2.resize(input_img, (30, 30))
         imgArray = ','.join(str(x) for x in np.array(data).flatten())
-        f.write(imgArray + '\n')
+        f.write(imgArray + ',' + str(label) + '\n')
     f.close()
 
 
