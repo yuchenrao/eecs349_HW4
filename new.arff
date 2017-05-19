@@ -1,4 +1,4 @@
-@relation new
+@relation training
 
 @attribute Column0 numeric
 @attribute Column1 numeric
